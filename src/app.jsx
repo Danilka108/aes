@@ -28,7 +28,7 @@ const App = (props) => {
             'Управляемый термоядерный синтез',
         ],
         path: [
-            '/main',
+            '/',
             '/hydro-energy',
             '/wind-energy',
             '/solar-energy',
