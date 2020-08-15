@@ -1,5 +1,15 @@
 @import '../../vars';
 
+.body-shadow {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-black;
+    pointer-events: none;
+    z-index: 1800;
+    transition: 0.7s;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -8,7 +18,7 @@
     width: 300px;
     background-color: $color-white;
     box-shadow: 1px 0px 6px 0px $color-gray_15;
-    transition: 1s ease-in-out;
+    transition: 0.7s ease-in-out;
     overflow: auto;
     z-index: 2000;
     &.active {
@@ -18,28 +28,29 @@
 
 .header__open {
     position: absolute;
-    top: 0;
+    top: 16px;
     right: 0;
     width: 50px;
-    margin-right: 16px;
-    height: 64px;
+    margin-right: 12px;
+    height: 28px;
     z-index: 1500;
+    cursor: pointer;
     div {
-        width: 40px;
+        width: 45px;
         height: 2.5px;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         background-color: $color-white;
         &:nth-child(1) {
-            top: 30%;
+            top: 0;
         }
         &:nth-child(2) {
             top: 50%;
             transform: translate(-50%, -50%);
         }
         &:nth-child(3) {
-            bottom: 30%;
+            bottom: 0;
         }
     }
 }

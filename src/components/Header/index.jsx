@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 
 const Header = (props) => {
+    const [isBodyShadow, setIsBodyShadow] = useState(false);
     const [toggle, setToggle] = useState(false);
     const headerRef = useRef(null);
     
     useEffect(() => {
         const handleWindowClick = (e) => {
             if(toggle && e.target !== headerRef.current && !headerRef.current.contains(e.target)) {
-                setToggle(false);
+                handleClose();
             }
         };
 
@@ -22,10 +23,12 @@ const Header = (props) => {
 
     const handleOpen = () => {
         setToggle(true);
+        setIsBodyShadow(true);
     };
 
     const handleClose = () => {
         setToggle(false);
+        setIsBodyShadow(false);
     };
 
     const handleLinkClick = (i) => {
@@ -35,6 +38,9 @@ const Header = (props) => {
 
     return (
         <>
+            <div className="body-shadow" style={{
+                opacity: isBodyShadow ? '0.5' : '0',
+            }}/>
             <div className="header__open" onClick={handleOpen}>
                 <div/>
                 <div/>
