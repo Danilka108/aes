@@ -7,7 +7,7 @@ const Img = (props) => {
 
     useEffect(() => {
         const setProperties = () => {
-            setHeight(imgRefs.current[0].clientWidth * 0.7);
+            setHeight(imgRefs.current[0].clientWidth * 0.6);
         };
         setProperties();
 
