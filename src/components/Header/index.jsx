@@ -41,24 +41,30 @@ const Header = (props) => {
             <div className="body-shadow" style={{
                 opacity: isBodyShadow ? '0.5' : '0',
             }}/>
-            <div className="header__open" onClick={handleOpen}>
-                <div/>
-                <div/>
-                <div/>
-            </div>
-            <div ref={headerRef} className={`header ${toggle ? 'active' : ''}`}>
-                <div className="header__close" onClick={handleClose}>
+            <button className="header__open" onClick={handleOpen}>
+                <div className="header__open-inner" tabindex='-1'>
+                    <div/>
                     <div/>
                     <div/>
                 </div>
+            </button>
+            <header ref={headerRef} className={`header ${toggle ? 'active' : ''}`}>
+                <button className="header__close" onClick={handleClose}>
+                    <div className="header__close-inner" tabindex='-1'>
+                        <div/>
+                        <div/>
+                    </div>
+                </button>
                 {props.pages.path.map((key, i) => {
                     return (
                         <Link key={i} className={`header__item ${i === props.activePage ? 'active' : ''}`} to={key} onClick={() => handleLinkClick(i)}>
-                            {props.pages.name[i]}
+                            <div className="header__item-inner" tabindex='-1'>
+                                {props.pages.name[i]}
+                            </div>
                         </Link>
                     );
                 })}
-            </div>
+            </header>
         </>
     );
 };

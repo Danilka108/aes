@@ -3,9 +3,9 @@ import './index.scss';
 
 const Content = (props) => {
     return (
-        <div className="wrapper content">
+        <section className="wrapper content">
             {props.children}
-        </div>
+        </section>
     );
 };
 

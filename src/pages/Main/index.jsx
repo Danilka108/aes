@@ -2,7 +2,6 @@ import React from 'react';
 
 // Components
 import Title from '../../components/Title/index';
-import TitleBg from '../../components/TitleBg/index';
 import Content from '../../components/Content/index';
 import Slider from '../../components/Slider/index';
 import Separation from '../../components/Separation/index';
@@ -25,16 +24,14 @@ const Main = () => {
         <>
             <Title>
                 <h2>Альтернативные<br/>источники энергии</h2>
-                <TitleBg>
-                    <Slider slides={[
+                <Slider slides={[
                             slider1,
                             slider2,
                             slider3,
                             slider4,
                             slider5,
                         ]}
-                    />
-                </TitleBg>
+                />
             </Title>
             <Content>
                 <Separation>

@@ -3,9 +3,9 @@ import './index.scss';
 
 const Title = (props) => {
     return (
-        <div className="wrapper title">
+        <section className="wrapper title">
             {props.children}
-        </div>
+        </section>
     );
 };
 
