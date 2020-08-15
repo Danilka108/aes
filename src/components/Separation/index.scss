@@ -1,0 +1,15 @@
+.separation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+// Adaptive
+@media (max-width: 767.98px){
+	.separation {
+        flex-wrap: wrap;
+        div:first-child {
+            margin-bottom: 2rem;
+        }
+    }
+}

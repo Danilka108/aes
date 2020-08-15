@@ -1,0 +1,27 @@
+.img {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.img__item {
+    width: 47%;
+    border-radius: 0.5rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// Adaptive
+@media (max-width: 767.98px){
+	.img {
+        flex-wrap: wrap;
+    }
+    .img__item {
+        width: 100%;
+        &:first-child {
+            margin-bottom: 2rem;
+        }
+    }
+}

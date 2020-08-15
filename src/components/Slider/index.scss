@@ -1,0 +1,69 @@
+@import '../../vars';
+
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slider-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation-timing-function: ease;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 0px 1500px rgba($color: $color-black, $alpha: 0.5);
+}
+
+.slider__dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 150;
+}
+
+.slider__dots-item {
+    background: none;
+    padding: 0;
+    border: 0;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
+    position: relative;
+    &:before {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: '';
+        border-radius: 50%;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: $color-gray_80;
+        transition: 0.25s;
+    }
+    &.active:before {
+        background-color: $color-white;
+        width: 1rem;
+        height: 1rem;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+// Animations
+@keyframes sliderItemPrevOpacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
